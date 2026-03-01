@@ -1,4 +1,16 @@
-# RecoveryIQ
+<div align="center">
+  <img src="assets/icon_master_1024.png" alt="RecoveryIQ Logo" width="150" height="150" />
+  
+  # RecoveryIQ
+  
+  **Coming Soon to the App Store!**
+  
+  ![App Version](https://img.shields.io/badge/App_Version-1.0.0--beta-blue.svg)
+  ![Docs Version](https://img.shields.io/badge/Docs_Version-1.0-green.svg)
+</div>
+
+<br/>
+
 ![Dashboard](assets/dashboard_mockup.png)
 
 RecoveryIQ is an advanced iOS application designed for dedicated lifters, bodybuilders, and athletes who want to optimize their training based on their body's actual physiological readiness. By integrating seamlessly with Apple HealthKit, the app translates raw biometric data—such as Heart Rate Variability (HRV), Resting Heart Rate (RHR), and Sleep Quality—into actionable insights.
