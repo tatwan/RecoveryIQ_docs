@@ -1,3 +1,9 @@
+ ---
+layout: default
+title: "Privacy"
+permalink: /privacy/
+---
+
  # Privacy Policy — RecoveryIQ
 
   **Last updated: March 2, 2026**

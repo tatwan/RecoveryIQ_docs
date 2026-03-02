@@ -1,27 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{{ page.title | default: site.title }}</title>
-    <!-- Import the GitHub Markdown CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+
+    <!-- GitHub-style markdown CSS (from unpkg/cdn). You can pin a version if you like. -->
+    <link rel="stylesheet" href="https://unpkg.com/github-markdown-css@5.1.0/github-markdown.css">
+
+    <!-- Small page layout helper so content isn't full-width -->
     <style>
-        .markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 45px;
-        }
-        @media (max-width: 767px) {
-            .markdown-body {
-                padding: 15px;
-            }
-        }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+      }
+      /* Optional: style images to fit container */
+      .markdown-body img { max-width: 100%; height: auto; }
     </style>
-</head>
-<body class="markdown-body">
-    {{ content }}
-</body>
+  </head>
+  <body>
+    <header>
+      <!-- optional header / navigation -->
+    </header>
+
+    <!-- Wrap the Jekyll content in the markdown-body class so it looks like GitHub's repo view -->
+    <main class="markdown-body">
+      {{ content }}
+    </main>
+
+    <footer>
+      <!-- optional footer -->
+    </footer>
+  </body>
 </html>
