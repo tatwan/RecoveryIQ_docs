@@ -1,3 +1,7 @@
+ ---
+layout: default
+---
+
 <div align="center">
   <img src="assets/icon_master_1024.png" alt="RecoveryIQ Logo" width="150" height="150" />
 

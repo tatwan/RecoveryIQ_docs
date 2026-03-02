@@ -1,3 +1,9 @@
-baseurl: "/RecoveryIQ_docs"   # important: your repo name when site is at https://tatwan.github.io/RecoveryIQ_docs/
-title: "RecoveryIQ Docs"
-# You can optionally pick a built-in Jekyll theme, but for GitHub-like markdown we will include the github-markdown-css in the layout instead.
+markdown: kramdown
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
