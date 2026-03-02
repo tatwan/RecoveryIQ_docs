@@ -2,18 +2,22 @@
 layout: default
 ---
 
-<div align="center">
+<p align="center">
   <img src="assets/icon_master_1024.png" alt="RecoveryIQ Logo" width="150" height="150" />
+</p>
 
-  # RecoveryIQ
+# RecoveryIQ
 
-  **Coming Soon to the App Store!**
+<p align="center">
+  <strong>Coming Soon to the App Store!</strong>
+</p>
 
-  ![App Version](https://img.shields.io/badge/App_Version-1.0.0--beta-blue.svg)
-  ![Docs Version](https://img.shields.io/badge/Docs_Version-1.0-green.svg)
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/App_Version-1.0.0--beta-blue.svg" alt="App Version" />
+  <img src="https://img.shields.io/badge/Docs_Version-1.0-green.svg" alt="Docs Version" />
+</p>
 
-<br/>
+---
 
 ![Dashboard](assets/dashboard_web.png)
 

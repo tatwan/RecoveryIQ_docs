@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ page.title | default: site.title | default: "RecoveryIQ" }}</title>
 
-    <!-- GitHub-style markdown CSS (from unpkg/cdn). You can pin a version if you like. -->
+    <!-- GitHub-style markdown CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
 
-    <!-- Small page layout helper so content isn't full-width -->
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+      }
       .markdown-body {
         box-sizing: border-box;
         min-width: 200px;
@@ -17,22 +21,35 @@
         margin: 0 auto;
         padding: 45px;
       }
-      /* Optional: style images to fit container */
-      .markdown-body img { max-width: 100%; height: auto; }
+      .markdown-body img { 
+        max-width: 100%; 
+        height: auto; 
+      }
+      /* Ensure proper spacing for headers */
+      .markdown-body h1,
+      .markdown-body h2,
+      .markdown-body h3 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+      }
+      .markdown-body h1 {
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid #d0d7de;
+      }
+      /* Better list styling */
+      .markdown-body ul,
+      .markdown-body ol {
+        padding-left: 2em;
+      }
+      /* Center-aligned content support */
+      .markdown-body p[align="center"] {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-    <header>
-      <!-- optional header / navigation -->
-    </header>
-
-    <!-- Wrap the Jekyll content in the markdown-body class so it looks like GitHub's repo view -->
     <main class="markdown-body">
       {{ content }}
     </main>
-
-    <footer>
-      <!-- optional footer -->
-    </footer>
   </body>
 </html>
