@@ -1,34 +1,34 @@
 <div align="center">
   <img src="assets/icon_master_1024.png" alt="RecoveryIQ Logo" width="150" height="150" />
-  
+
   # RecoveryIQ
-  
+
   **Coming Soon to the App Store!**
-  
+
   ![App Version](https://img.shields.io/badge/App_Version-1.0.0--beta-blue.svg)
   ![Docs Version](https://img.shields.io/badge/Docs_Version-1.0-green.svg)
 </div>
 
 <br/>
 
-![Dashboard](assets/dashboard_mockup.png)
+![Dashboard](assets/dashboard_web.png)
 
 RecoveryIQ is an advanced iOS application designed for dedicated lifters, bodybuilders, and athletes who want to optimize their training based on their body's actual physiological readiness. By integrating seamlessly with Apple HealthKit, the app translates raw biometric data—such as Heart Rate Variability (HRV), Resting Heart Rate (RHR), and Sleep Quality—into actionable insights.
 
 ## Features
 
 ### Daily Readiness Score
-![Signals](assets/signals_mockup.png)
+![Signals](assets/signals_web.png)
 
 Stop guessing if you've fully recovered. RecoveryIQ processes your overnight biometrics to calculate a daily Readiness Score (0-100), accompanied by intelligent guidance on whether you should push hard, focus on lighter work, or prioritize rest. The app also tracks your Acute:Chronic Workload Ratio (ACWR) to warn you if you're over-training.
 
 ### Intelligent Muscle Tracking
-![Muscles](assets/muscles_mockup.png)
+![Muscles](assets/muscles_web.png)
 
 Unlike standard fitness apps, RecoveryIQ tracks fatigue at the individual muscle group level. Log your workouts and the app's advanced DOMS (Delayed Onset Muscle Soreness) decay model will visually display which muscles are fully recovered, moderately fatigued, or need more rest. Get specific recommendations on which exercises to avoid based on your localized fatigue.
 
 ### Comprehensive History & Trends
-![History](assets/history_mockup.png)
+![History](assets/history_web.png)
 
 Analyze your progress over time with detailed 30-day and 90-day trend charts. Cross-reference your physiological readiness scores against your logged workout intensity to discover your optimal training conditions. Learn exactly how many consecutive training days your body can handle before performance drops.
 
