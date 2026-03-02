@@ -1,1 +1,11 @@
-theme: jekyll-theme-primer
+# Use GitHub Flavored Markdown for proper table and code block rendering
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Automatically apply the "default" layout to all markdown files
+defaults:
+  - scope:
+      path: "" # An empty string means all files in the repository
+    values:
+      layout: "default"
