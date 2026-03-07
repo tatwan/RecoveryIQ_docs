@@ -27,8 +27,6 @@ layout: default
 
 ---
 
-![Dashboard](assets/dashboard_web.png)
-
 RecoveryIQ is an advanced iOS application designed for dedicated lifters, bodybuilders, and athletes who want to optimize their training based on their body's actual physiological readiness. By integrating seamlessly with Apple HealthKit and Apple Watch, the app translates raw biometric data—such as Heart Rate Variability (HRV), Resting Heart Rate (RHR), and Sleep Quality—into actionable, muscle-specific insights.
 
 **No account. No cloud. No subscriptions. All your data stays on your iPhone.**
@@ -69,6 +67,9 @@ RecoveryIQ is an advanced iOS application designed for dedicated lifters, bodybu
 ## Features
 
 ### Daily Readiness Score
+
+![Dashboard](assets/dashboard_web.png)
+
 ![Signals](assets/signals_web.png)
 
 Stop guessing if you've fully recovered. RecoveryIQ processes your overnight biometrics to calculate a daily Readiness Score (0–100), accompanied by intelligent guidance on whether you should push hard, focus on lighter work, or prioritize rest. The app also tracks your Acute:Chronic Workload Ratio (ACWR) to warn you if you're overreaching.
