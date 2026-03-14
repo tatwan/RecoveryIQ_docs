@@ -19,7 +19,7 @@ layout: default
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/App_Version-1.0.0-blue.svg" alt="App Version" />
+  <img src="https://img.shields.io/badge/App_Version-1.0.4-blue.svg" alt="App Version" />
   <img src="https://img.shields.io/badge/Docs_Version-1.0-green.svg" alt="Docs Version" />
   <img src="https://img.shields.io/badge/Platform-iOS-lightgrey.svg" alt="Platform iOS" />
   <img src="https://img.shields.io/badge/Data-100%25_On--Device-brightgreen.svg" alt="Data On-Device" />
@@ -74,10 +74,16 @@ RecoveryIQ is an advanced iOS application designed for dedicated lifters, bodybu
 
 Stop guessing if you've fully recovered. RecoveryIQ processes your overnight biometrics to calculate a daily Readiness Score (0–100), accompanied by intelligent guidance on whether you should push hard, focus on lighter work, or prioritize rest. The app also tracks your Acute:Chronic Workload Ratio (ACWR) to warn you if you're overreaching.
 
+RecoveryIQ uses **HealthKit background delivery** — your sleep, HRV, and RHR data syncs automatically in the background, so your score is ready the moment you open the app, even if you never opened the Health app first.
+
 ### Intelligent Muscle Tracking
 ![Muscles](assets/muscles_web.png)
 
 Unlike standard fitness apps, RecoveryIQ tracks fatigue at the individual muscle group level. After you enrich your Apple Watch workouts with muscle data, the app's advanced DOMS (Delayed Onset Muscle Soreness) decay model visually displays which muscles are fully recovered, moderately fatigued, or need more rest. Get specific recommendations on which exercises to avoid based on your localized fatigue state.
+
+### Manual Workout Logging
+
+Don't have an Apple Watch session to enrich? You can log workouts directly inside RecoveryIQ. Tap the **+** button on the History screen to create a manual entry — select your muscle groups, set your RPE, rate how the session felt, and optionally log a top set for PR tracking. Manual workouts are visually marked with a purple left accent in the History list so you can tell them apart from Watch-synced sessions at a glance. Swipe left on any manual workout to delete it.
 
 ### Comprehensive History & Trends
 ![History](assets/history_web.png)
@@ -170,7 +176,7 @@ RecoveryIQ needs at least **7 days of biometric data** to establish your persona
 
 ### Step 1 — Morning Check-In
 
-Your day with RecoveryIQ starts the moment you wake up — even before you touch the app. Your Apple Watch has been silently collecting HRV, RHR, and sleep stage data overnight. When you open RecoveryIQ, it syncs this data from Apple Health automatically.
+Your day with RecoveryIQ starts the moment you wake up — even before you touch the app. Your Apple Watch has been silently collecting HRV, RHR, and sleep stage data overnight. RecoveryIQ uses HealthKit background delivery to sync this data automatically as it arrives, so your Readiness Score is already calculated by the time you open the app.
 
 **On the Dashboard you'll see:**
 
@@ -200,13 +206,15 @@ This is where RecoveryIQ pays dividends — turning a rigid program into an inte
 
 This is the most important step for unlocking the full power of RecoveryIQ, and it's unique to how the app is designed.
 
-**Here's how it works:**
+**There are two ways to get workout data into RecoveryIQ:**
 
-Your Apple Watch automatically logs your training session via the built-in Workout app. You select your workout type (Strength Training, HIIT, etc.), start the timer, train, and end the session. The Watch captures duration, heart rate zones, active calories, and more — and syncs everything to Apple Health.
+**Option A — Enrich an Apple Watch session (recommended):**
+Your Apple Watch automatically logs your training session via the built-in Workout app. The Watch captures duration, heart rate zones, active calories, and more — and syncs everything to Apple Health. However, your Watch has no idea *which muscles you trained* or *how hard it felt*. RecoveryIQ lets you add that context after the fact.
 
-However, your Watch has no idea *which muscles you trained* or *how hard it felt*. That's the missing piece. RecoveryIQ lets you add that context after the fact.
+**Option B — Log a manual workout directly in RecoveryIQ:**
+Don't have a Watch session? Tap the **+** button on the History tab to log a workout manually. Select your muscles, RPE, and optionally a top set — no Apple Watch required. Manual workouts appear with a purple left accent in your History list so you can distinguish them from Watch-synced sessions. Swipe left on a manual workout at any time to delete it.
 
-**Step-by-step:**
+**Step-by-step (Option A — enriching an Apple Watch session):**
 
 1. **Open the History tab** and switch to the **Workouts** view. You'll see today's Apple Watch session already appears, synced from Health.
 2. **Tap "Edit Details"** on the workout card. A sheet slides up.
@@ -392,10 +400,10 @@ RecoveryIQ's Readiness Score is not arbitrary — it's a weighted composite of f
 ## Frequently Asked Questions
 
 **Do I need an Apple Watch?**
-An Apple Watch is strongly recommended. Without it, RecoveryIQ cannot read overnight HRV or sleep stage data, which significantly limits the accuracy of your Readiness Score. The app can still function with manually-logged workouts, but the biometric half of the score will be unavailable.
+An Apple Watch is strongly recommended. Without it, RecoveryIQ cannot read overnight HRV or sleep stage data, which significantly limits the accuracy of your Readiness Score. That said, you can log workouts manually directly inside RecoveryIQ without a Watch session — the Muscles screen and DOMS model will work fully. The biometric portion of the Readiness Score (HRV, RHR, sleep) requires a Watch.
 
 **Why is my Muscles screen blank?**
-The Recovery Map only populates after you enrich at least one workout with muscle group data. Complete a workout on your Apple Watch, then open History → Workouts, tap the session, and tap "Edit Details" to select muscle groups and set your RPE.
+The Recovery Map only populates after at least one workout has muscle group data attached. You have two options: (1) complete a workout on your Apple Watch, then open History → Workouts, tap the session, and tap "Edit Details" to select muscles and set your RPE; or (2) tap the **+** button on the History tab to log a manual workout directly.
 
 **How accurate is the DOMS model?**
 The model is based on established sports science research — exponential decay from a 24-hour post-workout peak, with muscle-specific half-lives. It's not a direct measure of soreness, but a physiological estimate. Your subjective RPE logging directly influences the model's output — higher RPE = more aggressive DOMS curve.
@@ -407,7 +415,7 @@ Yes, completely. RecoveryIQ has no network dependency whatsoever. All data proce
 Yes. The app will still provide a biometric-based Readiness Score from your HRV, RHR, and sleep data. The Muscles screen will be unavailable, and ACWR will show as pending — but the Dashboard and Signals screens will be fully functional.
 
 **What happens if I miss a few days of wearing my Watch?**
-RecoveryIQ uses a rolling 3-day trailing sync window with a +6-hour time boundary shift, meaning it handles gaps gracefully. Missing days appear as gaps in charts rather than distorting your trends. Your baseline will not degrade from occasional gaps.
+RecoveryIQ handles gaps gracefully. Missing days appear as gaps in charts rather than distorting your trends, and your personal baseline will not degrade from occasional missed nights. The app syncs the last 30 days of HealthKit data on every refresh, so catching up after a gap is automatic.
 
 **Is my data backed up anywhere?**
 No. All data is stored locally in an on-device SQLite database. If you delete the app or replace your iPhone without transferring data, your history will be lost. There is currently no iCloud backup integration.
