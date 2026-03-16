@@ -19,7 +19,7 @@ layout: default
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/App_Version-1.0.4-blue.svg" alt="App Version" />
+  <img src="https://img.shields.io/badge/App_Version-1.0.5-blue.svg" alt="App Version" />
   <img src="https://img.shields.io/badge/Docs_Version-1.0-green.svg" alt="Docs Version" />
   <img src="https://img.shields.io/badge/Platform-iOS-lightgrey.svg" alt="Platform iOS" />
   <img src="https://img.shields.io/badge/Data-100%25_On--Device-brightgreen.svg" alt="Data On-Device" />
@@ -146,6 +146,12 @@ When you open RecoveryIQ for the first time, you will be prompted to grant **App
 - Sleep Analysis
 - Workouts
 - Active Energy / Heart Rate
+- Respiratory Rate
+- Blood Oxygen (SpO2)
+- Steps
+- Active Energy Burned
+- Basal Energy Burned
+- Body Temperature
 
 You can review and adjust these permissions at any time in **iPhone Settings → Privacy & Security → Health → RecoveryIQ**.
 
@@ -182,6 +188,7 @@ Your day with RecoveryIQ starts the moment you wake up — even before you touch
 
 - Your **Readiness Score** — a single number telling you how recovered you are today.
 - **KPI cards** for HRV, RHR, Sleep, and ACWR, each with a 7-day sparkline showing your trend.
+- **Additional metric cards** for SpO2, Respiratory Rate, Steps, Active Calories, and Basal Calories — informational snapshots of your daily biometric picture.
 - An **Insight Card** that translates your metrics into a plain-English recommendation ("HRV is slightly below baseline — train at 70–80% intensity today").
 - A **muscle fatigue strip** showing your most impacted muscles at a glance.
 
@@ -284,8 +291,8 @@ Tap any muscle on the body map to open a detail panel showing:
 
 | Screen | What it Shows |
 |---|---|
-| **Dashboard** | Readiness Score gauge, HRV / Sleep / RHR / ACWR KPI cards, daily insight text, 7-day readiness bar chart, muscle fatigue strip |
-| **Signals** | 90-day trend charts for HRV, RHR, and Sleep; ACWR zone indicator |
+| **Dashboard** | Readiness Score gauge, HRV / Sleep / RHR / ACWR KPI cards, SpO2 / Respiratory Rate / Steps / Active Cal / Basal Cal metric cards, daily insight text, 7-day readiness bar chart, muscle fatigue strip |
+| **Signals** | 90-day trend charts for HRV, RHR, Sleep, Respiratory Rate, Blood Oxygen, Steps, Active Calories, and Basal Calories; ACWR zone indicator |
 | **Muscles** | Interactive full-body recovery map — tap any muscle for DOMS %, recovery ETA, exercise guidance |
 | **History → Recovery** | Bar chart of daily readiness scores (30D / 90D / 180D / 365D) with workout markers |
 | **History → Workouts** | Calendar heatmap of training sessions; tap any session to see full detail |
@@ -386,6 +393,16 @@ RecoveryIQ's Readiness Score is not arbitrary — it's a weighted composite of f
 | HRV Score | 50% |
 | Sleep Score | 30% |
 | RHR Score | 20% |
+
+**Advanced biometric modifiers:**
+
+RecoveryIQ also uses three additional signals to fine-tune your score when you have enough history. If you don't have an Apple Watch Series 8+ or haven't worn it consistently for a week or more, these will have no effect — they only activate once your personal baseline is established.
+
+- **Blood Oxygen (SpO2):** Low overnight SpO2 can indicate breathing disruptions that reduce actual sleep quality, even when total sleep time looks normal. When SpO2 drops below 95%, the sleep component of your readiness score is discounted proportionally.
+- **Respiratory Rate:** An elevated breathing rate is one of the earliest signs of illness or accumulated training stress. When your respiratory rate is meaningfully above your personal baseline, your score is suppressed slightly — by up to 20%.
+- **Body Temperature:** A rising wrist temperature (Apple Watch Series 8+ only) is a strong early warning of illness. The score suppression scales with how far your temperature has risen above your personal norm.
+
+All three of these modifiers default to zero effect when data isn't available.
 
 **Training Zones:**
 
