@@ -19,8 +19,8 @@ layout: default
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/App_Version-1.0.5-blue.svg" alt="App Version" />
-  <img src="https://img.shields.io/badge/Docs_Version-1.0-green.svg" alt="Docs Version" />
+  <img src="https://img.shields.io/badge/App_Version-2.0.0-blue.svg" alt="App Version" />
+  <img src="https://img.shields.io/badge/Docs_Version-2.0-green.svg" alt="Docs Version" />
   <img src="https://img.shields.io/badge/Platform-iOS-lightgrey.svg" alt="Platform iOS" />
   <img src="https://img.shields.io/badge/Data-100%25_On--Device-brightgreen.svg" alt="Data On-Device" />
 </p>
@@ -72,7 +72,7 @@ RecoveryIQ is an advanced iOS application designed for dedicated lifters, bodybu
 
 ![Signals](assets/signals_web.png)
 
-Stop guessing if you've fully recovered. RecoveryIQ processes your overnight biometrics to calculate a daily Readiness Score (0–100), accompanied by intelligent guidance on whether you should push hard, focus on lighter work, or prioritize rest. The app also tracks your Acute:Chronic Workload Ratio (ACWR) to warn you if you're overreaching.
+Stop guessing if you've fully recovered. RecoveryIQ processes your overnight biometrics to calculate a daily Readiness Score (0–100), accompanied by intelligent guidance on whether you should push hard, focus on lighter work, or prioritize rest. The app also tracks your Acute:Chronic Workload Ratio (ACWR) to warn you if you're overreaching — even when your readiness score looks good, if your training load is elevated the Insight card will always flag it so you don't push into injury territory.
 
 RecoveryIQ uses **HealthKit background delivery** — your sleep, HRV, and RHR data syncs automatically in the background, so your score is ready the moment you open the app, even if you never opened the Health app first.
 
@@ -102,7 +102,7 @@ To get the most out of RecoveryIQ, it helps to understand the core metrics it tr
 
 **Resting Heart Rate (RHR):** The number of times your heart beats per minute while at complete rest. An unusually elevated RHR can be an early indicator of incomplete cardiovascular recovery, accumulated fatigue, or an oncoming illness.
 
-**Acute:Chronic Workload Ratio (ACWR):** A measure of your training load balance. It compares your recent 7-day training intensity (acute) to your historical 28-day training intensity (chronic). An ACWR between 0.8 and 1.3 is the optimal "sweet spot." An ACWR above 1.5 signals elevated overtraining or injury risk.
+**Acute:Chronic Workload Ratio (ACWR):** A measure of your training load balance. It compares your recent 7-day training intensity (acute) to your historical 28-day training intensity (chronic). An ACWR between 0.8 and 1.3 is the optimal "sweet spot." An ACWR above 1.5 signals elevated overtraining or injury risk. The score breakdown sheet shows your 30-day average ACWR as a baseline — a number you can compare directly against the 0.8–1.3 zone to see whether your typical training pattern is balanced.
 
 **Delayed Onset Muscle Soreness (DOMS) Estimate:** Not just how sore you *feel* — this is a mathematical decay model of how fatigued a specific muscle group is, based on workout intensity, time elapsed, and your global readiness. Each muscle has its own half-life: large muscles like Chest, Quads, Lats, and Glutes take the longest to recover (60h half-life), medium muscles like Hamstrings and Delts take 48h, and smaller accessory muscles like Biceps and Triceps recover faster (36h half-life).
 
@@ -189,10 +189,20 @@ Your day with RecoveryIQ starts the moment you wake up — even before you touch
 - Your **Readiness Score** — a single number telling you how recovered you are today.
 - **KPI cards** for HRV, RHR, Sleep, and ACWR, each with a 7-day sparkline showing your trend.
 - **Additional metric cards** for SpO2, Respiratory Rate, Steps, Active Calories, and Basal Calories — informational snapshots of your daily biometric picture.
-- An **Insight Card** that translates your metrics into a plain-English recommendation ("HRV is slightly below baseline — train at 70–80% intensity today").
+- An **Insight Card** that translates your metrics into a plain-English recommendation ("HRV is slightly below baseline — train at 70–80% intensity today"). When your ACWR is in the Caution (1.3–1.5) or Danger (>1.5) zone, a training load warning is always appended — even if your biometric recovery looks good.
 - A **muscle fatigue strip** showing your most impacted muscles at a glance.
 
 > **Tip:** Check the Insight Card color. Green means go hard, amber means train smart, red means rest is the priority.
+
+**No Apple Watch? Use Morning Check-In:**
+
+If you don't have Watch data for today — or if your sleep or RHR was entered manually and you want to correct it — the Dashboard shows a **Log / edit** link or a "Readiness Score Unavailable" card. Tap it to open the Morning Check-In form.
+
+The form shows only the fields that aren't already covered by HealthKit:
+- If your Apple Watch has already recorded **Sleep** or **RHR** for today, those fields appear as read-only rows with an "Apple Health" badge — you can't accidentally overwrite Watch data.
+- Fields not yet provided by HealthKit are editable text inputs, pre-filled with your 7-day median as a starting hint.
+
+Enter **Sleep (hours)** and/or **Resting HR (bpm)** and tap Save. Your score will be calculated at **0.65× confidence** (the gauge appears with a slightly dampened score) and upgrade automatically to full confidence the moment your Watch syncs the real data for that day. The entry link is hidden entirely when HealthKit has already provided both values for today.
 
 ---
 
@@ -282,8 +292,9 @@ Tap any muscle on the body map to open a detail panel showing:
 - **Last Trained** (Today / Yesterday / X days ago)
 - **Session Intensity** (RPE you logged)
 - **Estimated Ready In** (hours until the muscle crosses back into green)
-- **Exercises to Avoid** — specific movements that heavily load this muscle
+- **Exercises to Avoid** — all movements where this muscle is a primary mover, regardless of load (even "light" versions of the same pattern still stress the recovering tissue)
 - **Safe Exercises** — movements that spare the fatigued muscle while still allowing productive training
+- **OK / Deload** — light exercises drawn from the safe pool that provide active recovery without directly loading the recovering muscle
 
 ---
 
@@ -375,6 +386,8 @@ RecoveryIQ didn't prevent overtraining — Morgan did, by trusting the data over
 
 ## Understanding Your Readiness Score
 
+The score displayed on the Dashboard is a **Readiness Score** — not a Recovery Score. The distinction matters: it tells you how prepared your body is to take on training load today, not simply whether you've recovered from the last session. Tap the ⓘ icon next to the "READINESS SCORE" label on the Dashboard for an in-app explanation.
+
 RecoveryIQ's Readiness Score is not arbitrary — it's a weighted composite of four physiological signals that update based on data availability:
 
 **When workouts are logged:**
@@ -416,8 +429,11 @@ All three of these modifiers default to zero effect when data isn't available.
 
 ## Frequently Asked Questions
 
+**Is this a Recovery Score or a Readiness Score?**
+It's a **Readiness Score** — and the difference is intentional. A recovery score tells you whether your body has recovered. A readiness score tells you how prepared your body is to take on load *right now*, incorporating both your recovery state and your recent training history. A score of 65 doesn't mean you're 65% recovered — it means your physiology signals that 65/100 readiness to train hard today. Tap the ⓘ icon on the Dashboard for a full breakdown.
+
 **Do I need an Apple Watch?**
-An Apple Watch is strongly recommended. Without it, RecoveryIQ cannot read overnight HRV or sleep stage data, which significantly limits the accuracy of your Readiness Score. That said, you can log workouts manually directly inside RecoveryIQ without a Watch session — the Muscles screen and DOMS model will work fully. The biometric portion of the Readiness Score (HRV, RHR, sleep) requires a Watch.
+An Apple Watch is strongly recommended, but not required. Without a Watch, you can still get a readiness score by tapping the **Log / edit** link on the Dashboard and entering your sleep hours and RHR by hand. Manual entries are calculated at 0.65× confidence — scores are pulled slightly toward a neutral 50 to reflect the lower certainty of self-reported data. The full score (1.0× confidence) activates automatically once Watch data arrives for that day. The Muscles screen and DOMS model work fully without a Watch as long as you enrich workouts manually.
 
 **Why is my Muscles screen blank?**
 The Recovery Map only populates after at least one workout has muscle group data attached. You have two options: (1) complete a workout on your Apple Watch, then open History → Workouts, tap the session, and tap "Edit Details" to select muscles and set your RPE; or (2) tap the **+** button on the History tab to log a manual workout directly.
